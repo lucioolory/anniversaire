@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>09 · 06 · 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ÉCRAN D'ENTRÉE — LANCER L'EXPÉRIENCE -->
+  <div id="welcome-gate">
+    <div class="welcome-inner">
+      <p class="welcome-date">09 · 06 · 2026</p>
+      <h1 class="welcome-title">Une histoire<br/>à vivre.</h1>
+      <button id="btn-enter">
+        <span>▶&nbsp;&nbsp;Lancer l'expérience</span>
+      </button>
+      <p class="welcome-hint">Active le son pour une expérience complète</p>
+    </div>
+  </div>
+
+  <!-- INTRO CINÉMATIQUE -->
+  <div id="cinematic-intro" class="hidden">
+    <video id="intro-video" src="videos/lucrece/video12.mp4" playsinline preload="auto"></video>
+    <div id="intro-overlay"></div>
+    <div id="intro-text">
+      <p class="intro-date">09 · 06 · 2026</p>
+      <p class="intro-line1">Aujourd'hui n'est pas un jour comme les autres.</p>
+      <p class="intro-line2">Aujourd'hui, deux vies sont célébrées.</p>
+    </div>
+    <button id="intro-skip">Passer →</button>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-date">09 · 06</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-label">Préparation de votre expérience…</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div id="particles-js"></div>
+    <div class="chapter-label">Prologue</div>
+    <div class="hero-content">
+      <p class="hero-pre">Le 09 juin 2026</p>
+      <h1 class="hero-title">Un jour.<br/>Deux âmes.</h1>
+      <p class="hero-sub">Pour toi, <em>Murielle</em> — et pour toi, <em>Luciano</em>.</p>
+      <div class="hero-scroll-hint">
+        <span class="scroll-line"></span>
+        <p>Commence l'histoire</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPITRE I — LUCRÈCE INTRO -->
+  <section id="lucrece-intro" class="chapter">
+    <div class="chapter-label">Chapitre I</div>
+    <div class="chapter-bg-text">Murielle</div>
+    <div class="chapter-content">
+      <div class="person-tag gold">Lucrèce OLORY · 22 ans</div>
+      <h2 class="person-name">Murielle</h2>
+      <p class="person-quote">"Calme comme l'or,<br/>présente comme la lumière."</p>
+      <div class="person-traits">
+        <span class="trait">Calme</span>
+        <span class="trait-dot">·</span>
+        <span class="trait">Confidente</span>
+        <span class="trait-dot">·</span>
+        <span class="trait">Toujours là</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPITRE II — LUCRÈCE SOUVENIRS -->
+  <section id="lucrece-memories" class="chapter chapter-dark">
+    <div class="chapter-label">Chapitre II</div>
+    <div class="chapter-header">
+      <h3 class="chapter-title">Ses souvenirs</h3>
+      <p class="chapter-sub">Ces instants qui ne s'oublient pas.</p>
+    </div>
+    <div class="gallery-premium" id="gallery-lucrece"></div>
+    <div class="story-messages">
+      <div class="story-msg">
+        <span class="story-num">01</span>
+        <p>Tu as toujours été là, sans bruit, sans condition. Ma confidente, ma grande sœur. Dans chaque moment difficile, tu étais le calme dont j'avais besoin.</p>
+      </div>
+      <div class="story-msg">
+        <span class="story-num">02</span>
+        <p>22 ans et déjà une force tranquille qui inspire tout le monde autour de toi. Tu ne le vois peut-être pas, mais ton impact est immense.</p>
+      </div>
+      <div class="story-msg">
+        <span class="story-num">03</span>
+        <p>Joyeux anniversaire, Murielle. Que cette nouvelle année t'apporte tout ce que tu mérites — et tu mérites tout.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSITION -->
+  <div class="narrative-break">
+    <div class="nb-line"></div>
+    <div class="nb-text">Et puis, il y a lui.</div>
+    <div class="nb-line"></div>
+  </div>
+
+  <!-- CHAPITRE III — LUCIANO INTRO -->
+  <section id="luciano-intro" class="chapter">
+    <div class="chapter-label">Chapitre III</div>
+    <div class="chapter-bg-text electric-text">Luciano</div>
+    <div class="chapter-content">
+      <div class="person-tag blue">Luciano OLORY · 13 ans</div>
+      <h2 class="person-name electric">Luciano</h2>
+      <p class="person-quote">"L'énergie d'un soleil,<br/>le courage d'un lion."</p>
+      <div class="person-traits">
+        <span class="trait blue">Énergique</span>
+        <span class="trait-dot">·</span>
+        <span class="trait blue">Courageux</span>
+        <span class="trait-dot">·</span>
+        <span class="trait blue">Attachant</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPITRE IV — LUCIANO SOUVENIRS -->
+  <section id="luciano-memories" class="chapter chapter-dark">
+    <div class="chapter-label">Chapitre IV</div>
+    <div class="chapter-header">
+      <h3 class="chapter-title electric-text">Ses souvenirs</h3>
+      <p class="chapter-sub">Ces instants gravés pour toujours.</p>
+    </div>
+    <div class="gallery-premium" id="gallery-luciano"></div>
+    <div class="story-messages">
+      <div class="story-msg">
+        <span class="story-num blue">01</span>
+        <p>Tu es courageux, attachant, et tu grandis si vite. Chaque jour je suis fier de ce que tu deviens, petit frère.</p>
+      </div>
+      <div class="story-msg">
+        <span class="story-num blue">02</span>
+        <p>13 ans, c'est l'âge où tout devient possible. Le monde est grand, et toi tu es encore plus grand que lui.</p>
+      </div>
+      <div class="story-msg">
+        <span class="story-num blue">03</span>
+        <p>Joyeux anniversaire, Luciano. N'aie jamais peur de rêver grand. Je serai toujours là derrière toi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPITRE V — VIDÉOS -->
+  <section id="videos" class="chapter">
+    <div class="chapter-label">Chapitre V</div>
+    <div class="chapter-header">
+      <h3 class="chapter-title">En mouvement</h3>
+      <p class="chapter-sub">Ces moments capturés, vivants pour toujours.</p>
+    </div>
+    <div class="video-reel" id="video-feed"></div>
+  </section>
+
+  <!-- CHAPITRE VI — MESSAGES DU CŒUR -->
+  <section id="messages-coeur" class="chapter chapter-dark">
+    <div class="chapter-label">Chapitre VI</div>
+    <div class="chapter-header">
+      <h3 class="chapter-title">Messages du cœur</h3>
+      <p class="chapter-sub">Des mots réservés à toi seule, Murielle.</p>
+    </div>
+    <div class="messages-card">
+      <div class="messages-card-inner">
+        <div class="messages-icon">💌</div>
+        <p class="messages-card-text">
+          Deux personnes qui t'aiment ont écrit quelque chose pour toi.<br/>
+          Ces mots t'appartiennent.
+        </p>
+        <button class="btn-messages" id="btn-open-messages">
+          <span>Voir les messages</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPITRE VII — FINAL -->
+  <section id="finale" class="chapter">
+    <div class="chapter-label">Épilogue</div>
+    <div class="finale-content">
+      <p class="finale-pre">À vous deux, avec tout mon amour</p>
+      <h2 class="finale-title">Joyeux<br/>Anniversaire</h2>
+      <div class="finale-names">
+        <span class="finale-name gold">Murielle</span>
+        <span class="finale-amp">&amp;</span>
+        <span class="finale-name electric">Luciano</span>
+      </div>
+      <p class="finale-date">09 · 06 · 2026</p>
+      <p class="finale-sign">— Lucio ♥</p>
+    </div>
+  </section>
+
+  <!-- WOW MOMENT — ÉCRAN NOIR FINAL -->
+  <div id="wow-screen">
+    <div class="wow-inner">
+      <p class="wow-line-1">Murielle.</p>
+      <p class="wow-line-2">Luciano.</p>
+      <p class="wow-line-3">Ce site a été fait avec tout mon amour.</p>
+      <p class="wow-signature">— Lucio ♥</p>
+    </div>
+  </div>
+
+  <!-- MODALE CODE SECRET — CLAVIER CUSTOM -->
+  <div id="modal-code" class="modal-overlay">
+    <div class="modal-code-box">
+      <button class="modal-close" id="btn-close-modal">✕</button>
+      <div class="code-ambiance"></div>
+      <div class="code-content">
+        <div class="code-icon">🔐</div>
+        <h3 class="code-title">Espace privé</h3>
+        <p class="code-desc">Ces messages sont réservés à Murielle.<br/>Entre le code pour entrer.</p>
+        <div class="code-display">
+          <span class="code-dot" id="dot-0"></span>
+          <span class="code-dot" id="dot-1"></span>
+          <span class="code-dot" id="dot-2"></span>
+          <span class="code-dot" id="dot-3"></span>
+        </div>
+        <p class="code-error" id="code-error">Code incorrect. Essaie encore.</p>
+        <div class="numpad">
+          <button class="num-btn" data-num="1">1</button>
+          <button class="num-btn" data-num="2">2</button>
+          <button class="num-btn" data-num="3">3</button>
+          <button class="num-btn" data-num="4">4</button>
+          <button class="num-btn" data-num="5">5</button>
+          <button class="num-btn" data-num="6">6</button>
+          <button class="num-btn" data-num="7">7</button>
+          <button class="num-btn" data-num="8">8</button>
+          <button class="num-btn" data-num="9">9</button>
+          <button class="num-btn num-clear" data-num="clear">⌫</button>
+          <button class="num-btn" data-num="0">0</button>
+          <button class="num-btn num-ok" data-num="ok">✓</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALE ENVELOPPES -->
+  <div id="modal-envelopes" class="modal-overlay">
+    <div class="modal-envelopes-box">
+      <button class="modal-close" id="btn-close-envelopes">✕</button>
+      <p class="envelopes-pre">Ces lettres ont été écrites avec amour</p>
+      <h3 class="envelopes-title">Messages du cœur</h3>
+      <p class="envelopes-sub">Clique sur une enveloppe pour la lire</p>
+      <div class="envelopes-grid" id="envelopes-grid"></div>
+    </div>
+  </div>
+
+  <!-- MODALE LETTRE -->
+  <div id="modal-letter" class="modal-overlay">
+    <div class="letter-box">
+      <button class="modal-close" id="btn-close-letter">✕</button>
+      <div class="letter-header">
+        <div class="letter-from" id="letter-from"></div>
+        <div class="letter-to">Pour Murielle</div>
+      </div>
+      <div class="letter-body" id="letter-body"></div>
+      <div class="letter-signature" id="letter-signature"></div>
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <div id="music-player">
+    <audio id="bg-music" loop>
+      <source src="music/background.mp3" type="audio/mp3" />
+    </audio>
+    <button id="music-toggle" title="Musique">♪</button>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <div class="lightbox-close">✕</div>
+    <img src="" alt="" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
