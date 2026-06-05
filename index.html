@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap&font-display=swap" rel="stylesheet" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
@@ -219,7 +219,7 @@
   <!-- MODALE CODE SECRET — CLAVIER CUSTOM -->
   <div id="modal-code" class="modal-overlay">
     <div class="modal-code-box">
-      <button class="modal-close" id="btn-close-modal">✕</button>
+      <button class="modal-close" id="btn-close-modal" aria-label="Fermer">✕</button>
       <div class="code-ambiance"></div>
       <div class="code-content">
         <div class="code-icon">🔐</div>
@@ -253,7 +253,7 @@
   <!-- MODALE ENVELOPPES -->
   <div id="modal-envelopes" class="modal-overlay">
     <div class="modal-envelopes-box">
-      <button class="modal-close" id="btn-close-envelopes">✕</button>
+      <button class="modal-close" id="btn-close-envelopes" aria-label="Fermer">✕</button>
       <p class="envelopes-pre">Ces lettres ont été écrites avec amour</p>
       <h3 class="envelopes-title">Messages du cœur</h3>
       <p class="envelopes-sub">Clique sur une enveloppe pour la lire</p>
@@ -264,7 +264,7 @@
   <!-- MODALE LETTRE -->
   <div id="modal-letter" class="modal-overlay">
     <div class="letter-box">
-      <button class="modal-close" id="btn-close-letter">✕</button>
+      <button class="modal-close" id="btn-close-letter" aria-label="Retour aux messages">✕</button>
       <div class="letter-header">
         <div class="letter-from" id="letter-from"></div>
         <div class="letter-to">Pour Murielle</div>
@@ -279,12 +279,12 @@
     <audio id="bg-music" loop>
       <source src="music/background.mp3" type="audio/mp3" />
     </audio>
-    <button id="music-toggle" title="Musique">♪</button>
+    <button id="music-toggle" title="Musique" aria-label="Activer ou désactiver la musique">♪</button>
   </div>
 
   <!-- LIGHTBOX -->
   <div id="lightbox">
-    <div class="lightbox-close">✕</div>
+    <div class="lightbox-close" role="button" aria-label="Fermer la photo">✕</div>
     <img src="" alt="" />
   </div>
 
