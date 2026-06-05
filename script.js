@@ -137,6 +137,12 @@ function startSite() {
     bgMusic.volume = 0;
     bgMusic.play().catch(() => {});
     fadeInAudio(bgMusic, 0.3, 3000);
+    // A — Synchroniser le bouton avec l'état réel
+    const musicBtn = document.getElementById('music-toggle');
+    if (musicBtn) {
+      musicBtn.classList.add('playing');
+      musicBtn.textContent = '♫';
+    }
   }
 
   // Déclencher le loader puis les particles
@@ -316,6 +322,7 @@ function buildGallery(containerId, person, photos) {
     img.src = `img/${person}/${file}`;
     img.alt = `Souvenir ${i + 1}`;
     img.loading = 'lazy';
+    img.decoding = 'async';
 
     const zoom = document.createElement('div');
     zoom.className = 'zoom-icon';
@@ -422,6 +429,11 @@ function pauseAllVideos() {
     if (btn) btn.style.opacity = '1';
   });
 }
+
+// 7 — Pause vidéos quand l'onglet n'est pas visible
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) pauseAllVideos();
+});
 
 /* ══════════════════════════════════════════════
    CODE SECRET — CLAVIER CUSTOM
@@ -725,7 +737,8 @@ function initMusic() {
   const audio = document.getElementById('bg-music');
   if (!btn || !audio) return;
 
-  let playing = false;
+  // A — la musique démarre automatiquement via startSite(), donc playing=true
+  let playing = true;
 
   btn.addEventListener('click', () => {
     if (playing) {
