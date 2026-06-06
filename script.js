@@ -66,23 +66,51 @@ function initCinematicIntro() {
     }
   });
 
-  // Fin de la vidéo
+  const enterBtn = document.getElementById('intro-enter');
+
+  // Fin de la vidéo → afficher le bouton narratif
   video.addEventListener('ended', () => {
-    // Laisser le texte visible 2.5s
-    setTimeout(() => endIntro(), 2500);
+    overlay.classList.add('darkening');
+    text.classList.add('visible');
+    setTimeout(() => {
+      enterBtn?.classList.add('visible');
+    }, 1200);
   });
 
-  // Bouton passer
-  skipBtn?.addEventListener('click', () => endIntro());
+  // Clic sur le bouton narratif → démarrer la musique + ouvrir le site
+  enterBtn?.addEventListener('click', () => {
+    const bgMusic = document.getElementById('bg-music');
+    if (bgMusic) {
+      bgMusic.volume = 0;
+      bgMusic.play().catch(() => {});
+      fadeInAudio(bgMusic, 0.3, 3500);
+      const musicBtn = document.getElementById('music-toggle');
+      if (musicBtn) { musicBtn.classList.add('playing'); musicBtn.textContent = '♫'; }
+    }
+    endIntro();
+  });
 
-  // Bouton passer visible après 2.5s
-  setTimeout(() => { skipBtn?.classList.add('visible'); }, 2500);
+  // Bouton passer → affiche le bouton narratif directement
+  skipBtn?.addEventListener('click', () => {
+    video.pause();
+    overlay.classList.add('darkening');
+    text.classList.add('visible');
+    skipBtn.classList.remove('visible');
+    setTimeout(() => { enterBtn?.classList.add('visible'); }, 600);
+  });
 
-  // Tap sur la vidéo après 3s = passer
+  // Tap sur la vidéo après 3s = même comportement que passer
   let tapEnabled = false;
   setTimeout(() => { tapEnabled = true; }, 3000);
   intro.addEventListener('click', e => {
-    if (tapEnabled && e.target !== skipBtn) endIntro();
+    if (tapEnabled && e.target !== skipBtn && e.target !== enterBtn) {
+      video.pause();
+      overlay.classList.add('darkening');
+      text.classList.add('visible');
+      skipBtn?.classList.remove('visible');
+      setTimeout(() => { enterBtn?.classList.add('visible'); }, 600);
+      tapEnabled = false;
+    }
   });
 
   function endIntro() {
@@ -131,19 +159,7 @@ function startSite() {
   // Débloquer le scroll
   document.body.style.overflow = '';
 
-  // Démarrer la musique de fond en fondu
-  const bgMusic = document.getElementById('bg-music');
-  if (bgMusic) {
-    bgMusic.volume = 0;
-    bgMusic.play().catch(() => {});
-    fadeInAudio(bgMusic, 0.3, 3000);
-    // A — Synchroniser le bouton avec l'état réel
-    const musicBtn = document.getElementById('music-toggle');
-    if (musicBtn) {
-      musicBtn.classList.add('playing');
-      musicBtn.textContent = '♫';
-    }
-  }
+  // Musique démarrée par le bouton narratif de l'intro (garantit l'interaction utilisateur)
 
   // Déclencher le loader puis les particles
   const loader = document.getElementById('loader');
