@@ -225,24 +225,36 @@ const ENVELOPES = [
   {
     from: 'Lucio',
     emoji: '💛',
-    message: `Murielle,
+    message: `Hey grande sœur,
 
-Ça fait 22 ans que tu es là.
-22 ans que tu es la grande sœur que tout le monde rêve d'avoir.
+D'abord, je t'aime énormément.
 
-Tu n'as jamais eu besoin de te battre pour qu'on te remarque.
-Tu es juste là — calme, forte, présente.
-Et cette présence, elle compte plus que tu ne le crois.
+C'est une chose tellement forte, parce que je sais qu'au moins toi, tu ne me trahiras jamais et que tu ne me laisseras jamais tomber.
 
-Il y a des soirs où j'ai eu besoin de toi sans te le dire.
-Et tu étais là quand même.
-C'est ça, Murielle.
+Chaque jour que Dieu fait, je te bénis dans mes prières. Je demande à Dieu de te combler davantage encore, parce qu'à mes yeux, tu ne l'es pas encore assez. Et c'est pour cela que je continuerai toujours à remercier la Vierge Marie de m'avoir fait le cadeau de t'avoir comme sœur.
 
-Aujourd'hui c'est ton jour.
-Profite de chaque seconde.
-Tu le mérites depuis longtemps.
+Tu es l'une des plus belles choses qui me soient arrivées dans la vie.
 
-Je t'aime, grande sœur.`,
+Je ne te le dis pas souvent, mais je t'aime. Je t'aime, je t'aime, je t'aime.
+
+Et je peux te jurer qu'à chaque fois que j'imagine le jour où tu partiras construire ta vie avec ton mari, je me demande sincèrement comment je vais faire sans toi. Sérieusement... comment ?
+
+C'est pour cela que jusqu'à la fin des temps, tu me verras toujours dans tes pas. Même si je dois tomber après toi, je préfère encore te suivre et trébucher que de te laisser trop loin devant.
+
+Je t'aime, grande sœur.
+
+Tu as toujours été là pour moi. Ma confidente, ma deuxième mère. Alors oui, ce sera forcément difficile pour moi de te voir partir un jour.
+
+Mais c'est la vie.
+
+Et ne t'inquiète pas, aujourd'hui je suis beaucoup plus conscient et lucide concernant les filles. Tu peux fermer les yeux sur ce sujet-là. J'ai grandi, j'ai mûri, et tu m'as déjà appris l'essentiel.
+
+Merci d'exister.
+Merci de continuer à être présente dans ma vie.
+
+Ton petit frère Lucio t'aime profondément et t'a fait ce site avec tout son cœur.
+
+Éternel amour. 🧡`,
     signature: '— Lucio ♥'
   },
   {
